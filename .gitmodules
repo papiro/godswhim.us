@@ -1,0 +1,9 @@
+[submodule "node_modules/awning"]
+	path = node_modules/awning
+	url = git@github.com:papiro/awning.git
+[submodule "public/lib/livity"]
+	path = public/lib/livity
+	url = git@github.com:papiro/livity.git
+[submodule "public/lib/grate"]
+	path = public/lib/grate
+	url = git@github.com:papiro/grate.git
