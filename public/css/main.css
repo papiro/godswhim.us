@@ -1,0 +1,11 @@
+@import './font-faces.css';
+
+h1 {
+  color: #AC8354;
+}
+.categories {
+  background-color: #151718;
+}
+.chronology {
+  background-color: #4E3424;
+}

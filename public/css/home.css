@@ -1,0 +1,53 @@
+body {
+  background-color: #151718;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+h1 {
+  font-family: Tangerine;
+  font-size: 5em;
+  color: #D9C9AF;
+  text-align: center;
+  position: relative;
+  text-shadow: 0.2em 0.2em 0.5em #233B9E;
+}
+.tagline {
+  font-family: Raleway;
+  font-weight: 400;
+  font-size: 1rem;
+  text-shadow: 0.2em 0.2em 0.5em #233B9E;
+  position: absolute;
+  bottom: -5%;
+  left: 55%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+header {
+  padding: 1em 0 4em;
+}
+.categories,
+.chronology {
+  padding: 1em;
+}
+.categories {
+  background-color: #56905A;
+}
+.category {
+  text-align: center;
+}
+.category-link {
+  font-size: 1.5em;
+}
+.chronology {
+  background-color: #4E3424;
+}
+
+@media (min-width: 768px) {
+  .tagline {
+    left: 50%;
+    transform: none;
+  }
+}

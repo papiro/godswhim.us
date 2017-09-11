@@ -1,0 +1,61 @@
++latte          #AC8354
++mocha          #4E3424
++peacefulBlack  #151718
++kermit         #56905A
++carefreeBlue   #233B9E
++offwhite       #D9C9AF
++clay           #572A16
+
+body {
+  background-color: peacefulBlack;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+h1 {
+  font-family: Tangerine;
+  font-size: 5em;
+  color: offwhite;
+  text-align: center;
+  position: relative;
+  text-shadow: 0.2em 0.2em 0.5em carefreeBlue;
+}
+.tagline {
+  font-family: Raleway;
+  font-weight: 400;
+  font-size: 1rem;
+  text-shadow: 0.2em 0.2em 0.5em carefreeBlue;
+  position: absolute;
+  bottom: -5%;
+  left: 55%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+header {
+  padding: 1em 0 4em;
+}
+.categories,
+.chronology {
+  padding: 1em;
+}
+.categories {
+  background-color: kermit;
+}
+.category {
+  text-align: center;
+}
+.category-link {
+  font-size: 1.5em;
+}
+.chronology {
+  background-color: mocha;
+}
+
+@media (min-width: 768px) {
+  .tagline {
+    left: 50%;
+    transform: none;
+  }
+}

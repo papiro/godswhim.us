@@ -1,0 +1,23 @@
+<link id="css" rel="stylesheet" href="/css/home.css">
+
+<header>
+  <h1>
+    Godswhim.us
+    <span class="tagline">website of Pierre Alfred Pirault</span>
+  </h1>
+</header>
+<main>
+  <section class="categories @full @desktop-2/5">
+    <ul>
+      `['poems'] as category =>
+      <li class="category">
+        <a href="/${category}" class="category-link">
+          ${Category}
+        </a>
+      </li>
+      `
+    </ul>
+  </section>
+  <section class="chronology @full @desktop-2/5"></section>
+</main>
+<footer></footer>

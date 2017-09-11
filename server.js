@@ -9,11 +9,23 @@ const
 ,
   AwningStore = require('awning').Store
   //store = new AwningStore({ file: path.join(root, 'godswhim.db.json'), frequency: 30000 })
+,
+  build = require('awning').build
+,
+  dev = require('awning').dev
 ;
 
 global.app = {
   root: path.resolve('public')
 }
+
+dev({
+  axe: path.resolve('public/css')  
+})
+
+build({
+  axe: path.resolve('public/css')  
+})
 
 const server = require('awning').server({
   name: 'Godswhim.us',
