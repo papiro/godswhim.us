@@ -1,17 +1,15 @@
-+latte          #AC8354
-+mocha          #4E3424
-+peacefulBlack  #151718
-+kermit         #56905A
-+carefreeBlue   #233B9E
-
 @import './font-faces.css';
 
-h1 {
-  color: latte;
+header .theme-switch {
+  color: offwhite; 
+  position: fixed;
+  top: 0.5em;
+  right: 0.5em;
 }
-.categories {
-  background-color: peacefulBlack;
-}
-.chronology {
-  background-color: mocha;
+.copyright {
+  color: kermit;
+  font-size: 2em;
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.5em;
 }

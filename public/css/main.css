@@ -1,11 +1,15 @@
 @import './font-faces.css';
 
-h1 {
-  color: #AC8354;
+header .theme-switch {
+  color: #D9C9AF; 
+  position: fixed;
+  top: 0.5em;
+  right: 0.5em;
 }
-.categories {
-  background-color: #151718;
-}
-.chronology {
-  background-color: #4E3424;
+.copyright {
+  color: #56905A;
+  font-size: 2em;
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.5em;
 }

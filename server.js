@@ -10,7 +10,8 @@ const
   AwningStore = require('awning').Store
   //store = new AwningStore({ file: path.join(root, 'godswhim.db.json'), frequency: 30000 })
 ,
-  build = require('awning').build
+  build = require('awning').build,
+  colors = require('./config/colors')
 ,
   dev = require('awning').dev
 ;
@@ -20,10 +21,11 @@ global.app = {
 }
 
 dev({
-  axe: path.resolve('public/css')  
+  axe: path.resolve('public/css')
 })
 
-build({
+build.axe({
+  vars: colors,
   axe: path.resolve('public/css')  
 })
 

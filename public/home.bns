@@ -5,9 +5,10 @@
     Godswhim.us
     <span class="tagline">website of Pierre Alfred Pirault</span>
   </h1>
+  <span id="themeSwitch" class="theme-switch">SwitcH</span>
 </header>
 <main>
-  <section class="categories @full @desktop-2/5">
+  <section class="categories @9/10 @desktop-2/5">
     <ul>
       `[
         {
@@ -31,6 +32,5 @@
       `
     </ul>
   </section>
-  <section class="chronology @full @desktop-2/5"></section>
+  <section class="chronology @9/10 @desktop-2/5"></section>
 </main>
-<footer></footer>

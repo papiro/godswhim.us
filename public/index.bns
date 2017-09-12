@@ -15,9 +15,11 @@
     <script src="lib/livity/src/l.js"></script>
     <script src="js/main.js"></script>
   </head>
-  <body>
+  <body class="theme-1">
     <header></header>
     <main></main>
-    <footer></footer>
+    <footer>
+      <span class="copyright">&copy;</span>
+    </footer>
   </body>
 </html>
