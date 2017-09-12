@@ -25,9 +25,6 @@ h1 {
   transform: translateX(-50%);
   white-space: nowrap;
 }
-header {
-  padding: 1em 0 4em;
-}
 .categories,
 .chronology {
   padding: 1em;
@@ -39,13 +36,21 @@ header {
   text-align: center;
 }
 .category-link {
-  font-size: 1.5em;
+  font-size: 3.5em;
+  font-family: Tangerine;
+  text-shadow: 0.05em 0.1em 0.3em white, -0.05em 0.1em 0.1em black;
+}
+.category-link:hover {
+  color: #233B9E;
 }
 .chronology {
   background-color: #4E3424;
 }
 
 @media (min-width: 768px) {
+  header {
+    padding: 1em 0 4em;
+  }
   .tagline {
     left: 50%;
     transform: none;
