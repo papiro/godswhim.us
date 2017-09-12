@@ -12,13 +12,13 @@ h1 {
   color: #D9C9AF;
   text-align: center;
   position: relative;
-  text-shadow: 0.2em 0.2em 0.5em #233B9E;
+  text-shadow: 0.2em 0.2em 0.5em #4E3424;
 }
 .tagline {
   font-family: Raleway;
   font-weight: 400;
   font-size: 1rem;
-  text-shadow: 0.2em 0.2em 0.5em #233B9E;
+  text-shadow: 0 0 0.9em #D9C9AF;
   position: absolute;
   bottom: -5%;
   left: 55%;
@@ -30,15 +30,15 @@ h1 {
   padding: 1em;
 }
 .categories {
-  background-color: #56905A;
+  background-color: #572A16;
 }
 .category {
   text-align: center;
 }
 .category-link {
-  font-size: 3.5em;
+  font-size: 3em;
   font-family: Tangerine;
-  text-shadow: 0.05em 0.1em 0.3em white, -0.05em 0.1em 0.1em black;
+  text-shadow: 0 0 0.3em #D9C9AF, -0.05em 0.05em 0.1em #000;
 }
 .category-link:hover {
   color: #233B9E;
