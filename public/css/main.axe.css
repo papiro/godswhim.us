@@ -1,15 +1,28 @@
 @import './font-faces.css';
 
 header .theme-switch {
-  color: offwhite; 
+  border: 0.25em ridge kermit;
   position: fixed;
+  width: 0.5em;
   top: 0.5em;
   right: 0.5em;
+  transition: all 1s;
+  padding: 0.1em;
+  background-color: carefreeBlue;
+  cursor: pointer;
+}
+.theme-1 header .theme-switch {
+  box-shadow: 0 0 2em 0.1em offwhite;
+  border-color: carefreeBlue;
+}
+.theme-2 header .theme-switch {
+  box-shadow: 0 0 2em 0.1em black;
+  transform: rotate(720deg);
 }
 .copyright {
   color: kermit;
-  font-size: 2em;
+  font-size: 1.5em;
   position: fixed;
-  bottom: 0.5em;
-  right: 0.5em;
+  bottom: 0.2em;
+  right: 0.2em;
 }

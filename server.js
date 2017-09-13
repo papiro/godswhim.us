@@ -21,6 +21,7 @@ global.app = {
 }
 
 dev({
+  vars: colors,
   axe: path.resolve('public/css')
 })
 

@@ -5,7 +5,7 @@
     Godswhim.us
     <span class="tagline">website of Pierre Alfred Pirault</span>
   </h1>
-  <span id="themeSwitch" class="theme-switch">SwitcH</span>
+  <span id="themeSwitch" class="theme-switch" data-themes="theme-1 theme-2" data-current-theme="theme-1"></span>
 </header>
 <main>
   <section class="categories @9/10 @desktop-2/5">
