@@ -3,7 +3,14 @@
   "mocha": "#4E3424",
   "peacefulBlack": "#151718",
   "kermit": "#56905A",
-  "carefreeBlue": "#233B9E",
+  "carefreeBlue1": "#233B9E",
+  "carefreeBlue2": "#335894",
   "offwhite": "#D9C9AF",
-  "clay": "#572A16"
+  "clay": "#572A16",
+  "softEarth": "#947233",
+  "softGreen": "#759433",
+  "sun1": "#CDCD32",
+  "sun2": "#D1DB43",
+  "sun3": "#C9D63D",
+  "sun4": "#E6E698"
 }

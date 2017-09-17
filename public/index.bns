@@ -15,7 +15,7 @@
     <script src="lib/livity/src/l.js"></script>
     <script src="js/main.js"></script>
   </head>
-  <body class="theme-2">
+  <body class="moon">
     <header></header>
     <main></main>
     <footer>

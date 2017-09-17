@@ -1,23 +1,28 @@
 @import './font-faces.css';
 
 header .theme-switch {
-  border: 0.25em ridge #56905A;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  transform: translateZ(0);
+
+  border: 0.5em ridge;
+  border-radius: 50%;
   position: fixed;
-  width: 0.5em;
   top: 0.5em;
   right: 0.5em;
-  transition: all 1s;
+  transition: all 2s;
   padding: 0.1em;
-  background-color: #233B9E;
+  background-color: #CDCD32;
   cursor: pointer;
 }
-.theme-1 header .theme-switch {
-  box-shadow: 0 0 2em 0.1em #D9C9AF;
-  border-color: #233B9E;
+.sun header .theme-switch {
+  box-shadow: 0 0 13em 8em #E6E698;
+  border-color: #D1DB43;
 }
-.theme-2 header .theme-switch {
-  box-shadow: 0 0 2em 0.1em black;
-  transform: rotate(720deg);
+.moon header .theme-switch {
+  box-shadow: 0 0 2em 0.1em #335894;
+  /*transform: rotate(720deg) translateZ(0);*/
+  border-color: #56905A;
 }
 .copyright {
   color: #56905A;

@@ -1,39 +1,56 @@
 body {
+  transition: background-color 5s;
+}
+body.sun{
+  background-color: #233B9E;
+}
+body.moon{
   background-color: #151718;
 }
-.theme-1 .tagline, 
-.theme-2 .tagline, 
-.theme-1 h1, 
-.theme-2 h1 {
+.sun .tagline, 
+.moon .tagline, 
+.sun h1, 
+.moon h1 {
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
   transform: translateZ(0);
-  transition: 5s all;
+  transition: 1s all;
 }
-.theme-1 h1 {
+.sun h1, 
+.moon h1 {
+  transition: 3s all;
+}
+.sun h1 {
   color: #D9C9AF;
   text-shadow: 0.2em 0.2em 0.5em #4E3424;
 }
-.theme-2 h1 {
+.moon h1 {
   color: black;
   text-shadow: 0.2em 0.2em 0.5em #D9C9AF;
 }
-.theme-1 .tagline {
+.sun .tagline {
   text-shadow: 0 0 0.9em #D9C9AF;
 }
 .category-link {
   text-shadow: 0 0 0.3em #D9C9AF, -0.05em 0.05em 0.1em #000;
 }
-/*.theme-2 .category-link {
+.moon .category-link {
   transform: translate3d(0,0,0);
-  color: #D9C9AF;
+  color: white;
   text-shadow: 0 0 0.3em #D9C9AF, -0.05em 0.05em 0.1em #000;
-}*/
-.categories {
-  background-color: #572A16;
 }
-.chronology {
-  background-color: #4E3424;
+.moon .categories {
+  background-color: #151718;
+}
+.moon .chronology {
+  background-color: #151718;
+}
+.sun .categories {
+  background-color: #759433;
+  border-radius: 50%;
+}
+.sun .chronology {
+  background-color: #947233;
 }
 .category-link:hover {
   color: white;
@@ -62,6 +79,7 @@ h1 {
 .categories,
 .chronology {
   padding: 1em;
+  transition: all 3s;
 }
 .category {
   text-align: center;
@@ -76,7 +94,6 @@ h1 {
     padding: 1em 0 4em;
   }
   .tagline {
-    left: 50%;
     transform: none;
   }
   .categories,

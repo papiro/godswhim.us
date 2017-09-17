@@ -14,6 +14,10 @@ const
   colors = require('./config/colors')
 ,
   dev = require('awning').dev
+,
+  poemsDir = path.join(root, 'poems'),
+  poemsIn = path.join(poemsDir, 'raw'),
+  poemsOut = path.join(poemsDir, 'web')
 ;
 
 global.app = {
@@ -27,7 +31,11 @@ dev({
 
 build.axe({
   vars: colors,
-  axe: path.resolve('public/css')  
+  axe: path.resolve('public/css')
+})
+build.poems({
+  dir_in: poemsIn,
+  dir_out: poemsOut
 })
 
 const server = require('awning').server({
@@ -40,6 +48,32 @@ const server = require('awning').server({
   },
   onRequest (req) {
     console.log(req.method, ' ', req.url)
+  },
+  bnsConfig: {
+    poems: {
+      data () {
+        return new Promise( (resolve, reject) => {
+          fs.readdir(poemsOut, (err, files) => {
+            const filesPromiseArray = files.map( file => {
+              return new Promise( (inner_resolve, inner_reject) => {
+                fs.readFile(path.join(poemsOut, file), {encoding: 'utf8'}, (err, data) => {
+                  if (err) return inner_reject(err)
+                  inner_resolve(JSON.parse(data))
+                })
+              })
+            })
+
+            Promise.all(filesPromiseArray)
+              .then( res => {
+                resolve([].concat(res))
+              })
+              .catch( err => {
+                console.error(err)
+              })
+          })
+        })
+      }
+    }
   },
   rewrite: [
     {

@@ -1,39 +1,56 @@
 body {
+  transition: background-color 5s;
+}
+body.sun{
+  background-color: carefreeBlue1;
+}
+body.moon{
   background-color: peacefulBlack;
 }
-.theme-1 .tagline, 
-.theme-2 .tagline, 
-.theme-1 h1, 
-.theme-2 h1 {
+.sun .tagline, 
+.moon .tagline, 
+.sun h1, 
+.moon h1 {
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
   transform: translateZ(0);
-  transition: 5s all;
+  transition: 1s all;
 }
-.theme-1 h1 {
+.sun h1, 
+.moon h1 {
+  transition: 3s all;
+}
+.sun h1 {
   color: offwhite;
   text-shadow: 0.2em 0.2em 0.5em mocha;
 }
-.theme-2 h1 {
+.moon h1 {
   color: black;
   text-shadow: 0.2em 0.2em 0.5em offwhite;
 }
-.theme-1 .tagline {
+.sun .tagline {
   text-shadow: 0 0 0.9em offwhite;
 }
 .category-link {
   text-shadow: 0 0 0.3em offwhite, -0.05em 0.05em 0.1em #000;
 }
-/*.theme-2 .category-link {
+.moon .category-link {
   transform: translate3d(0,0,0);
-  color: offwhite;
+  color: white;
   text-shadow: 0 0 0.3em offwhite, -0.05em 0.05em 0.1em #000;
-}*/
-.categories {
-  background-color: clay;
 }
-.chronology {
-  background-color: mocha;
+.moon .categories {
+  background-color: peacefulBlack;
+}
+.moon .chronology {
+  background-color: peacefulBlack;
+}
+.sun .categories {
+  background-color: softGreen;
+  border-radius: 50%;
+}
+.sun .chronology {
+  background-color: softEarth;
 }
 .category-link:hover {
   color: white;
@@ -62,6 +79,7 @@ h1 {
 .categories,
 .chronology {
   padding: 1em;
+  transition: all 3s;
 }
 .category {
   text-align: center;
@@ -76,7 +94,6 @@ h1 {
     padding: 1em 0 4em;
   }
   .tagline {
-    left: 50%;
     transform: none;
   }
   .categories,

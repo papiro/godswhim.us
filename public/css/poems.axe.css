@@ -1,0 +1,8 @@
+.poems-main {
+  color: kermit;
+}
+.poem-cell {
+  background-color: offwhite;
+  border-radius: 3em;
+  white-space: pre-wrap;
+}

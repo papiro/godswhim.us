@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/css/poems.css">
+<title>Poems</title>
+
+<header></header>
+
+<main class="poems-main">
+  <bean id="poems">
+  poems as poem =>
+
+    <h2>${poem.title}</h2>
+
+    <pre class="poem-cell">
+      ${poem.dump}
+    </pre>
+
+  </bean>
+</main>

@@ -1,0 +1,8 @@
+.poems-main {
+  color: #56905A;
+}
+.poem-cell {
+  background-color: #D9C9AF;
+  border-radius: 3em;
+  white-space: pre-wrap;
+}

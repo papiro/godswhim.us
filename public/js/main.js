@@ -5,23 +5,30 @@ new Livity({
     '/': {
       template: '/home.bns',
       body () {
-        const themeSwitcher = l('#themeSwitch')        
-
-        themeSwitcher.on('click', function () {
-          const { themes: themesStr, currentTheme } = this.dataset
-          const themes = themesStr.split(/\s+/)
-          let nextThemeIndex = themes.indexOf(currentTheme) + 1
-          if (nextThemeIndex === themes.length) {
-            nextThemeIndex = 0
-          }
-          const nextTheme = themes[nextThemeIndex]
+        const lthemeSwitch = l('#themeSwitch')
+        lthemeSwitch.on('click', function () {
+          const { currentTheme, nextTheme } = getThemeInfo(this)
           this.dataset.currentTheme = nextTheme
           l('body').removeClass(currentTheme).addClass(nextTheme)
         })
         // On load, animate title.
         setTimeout(() => {
-          l('body').addClass('theme-1').removeClass('theme-2')
+          const { currentTheme, nextTheme } = getThemeInfo(lthemeSwitch[0])
+          l('body').addClass(currentTheme).removeClass(nextTheme)
         }, 1000)
+
+        function getThemeInfo (themeSwitcher) {
+          const { themes: availableThemesStr, currentTheme } = lthemeSwitch[0].dataset
+          const availableThemes = availableThemesStr.split(/\s+/)
+          let nextThemeIndex = availableThemes.indexOf(currentTheme) + 1
+          const nextTheme = availableThemes[nextThemeIndex === availableThemes.length ? 0 : nextThemeIndex]
+
+          return {
+            availableThemes,
+            currentTheme,
+            nextTheme
+          }
+        }
       }
     },
     '/poems': {
@@ -29,3 +36,4 @@ new Livity({
     }
   }
 })
+
