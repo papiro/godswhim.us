@@ -8,7 +8,8 @@ header .theme-switch {
   position: fixed;
   top: 0.5em;
   right: 0.5em;
-  transition: all 2s;
+  transition-duration: 2s;
+  transition-property: box-shadow, border-color;
   padding: 0.1em;
   background-color: sun1;
   cursor: pointer;

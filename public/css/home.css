@@ -18,11 +18,12 @@ body.moon{
 .moon .tagline, 
 .sun h1, 
 .moon h1 {
-  transition: 1s all;
+  transition-duration: 1s; 
+  transition-property: background-color, text-shadow, color;
 }
 .sun h1, 
 .moon h1 {
-  transition: 3s all;
+  transition-duration: 3s;
 }
 .sun h1 {
   color: #D9C9AF;
@@ -71,8 +72,8 @@ body.moon{
 }
 main {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 h1 {
   font-family: Tangerine;
@@ -104,6 +105,10 @@ h1 {
 }
 
 @media (min-width: 768px) {
+  main {
+    flex-direction: row;
+    justify-content: space-around;
+  }
   header {
     padding: 1em 0 4em;
   }
@@ -113,5 +118,8 @@ h1 {
   .categories,
   .chronology {
     border-radius: 1em;
+  }
+  .chronology {
+    height: auto;
   }
 }
