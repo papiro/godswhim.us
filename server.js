@@ -26,17 +26,21 @@ global.app = {
 
 dev({
   vars: colors,
-  axe: path.resolve('public/css')
+  axe: [path.resolve('public/css'), path.resolve('public/css/poems')]
 })
 
 build.axe({
   vars: colors,
-  axe: path.resolve('public/css')
+  dirs: [path.resolve('public/css'), path.resolve('public/css/poems')]
 })
-build.poems({
+
+const poemsJSON = build.text(new build.TextParser({
   dir_in: poemsIn,
   dir_out: poemsOut
-})
+})).reduce( (obj, json) => {
+  obj[json.title] = json.data  
+  return obj
+}, {})
 
 const server = require('awning').server({
   name: 'Godswhim.us',
@@ -50,29 +54,34 @@ const server = require('awning').server({
     console.log(req.method, ' ', req.url)
   },
   bnsConfig: {
-    poems: {
-      data () {
-        return new Promise( (resolve, reject) => {
-          fs.readdir(poemsOut, (err, files) => {
-            const filesPromiseArray = files.map( file => {
-              return new Promise( (inner_resolve, inner_reject) => {
-                fs.readFile(path.join(poemsOut, file), {encoding: 'utf8'}, (err, data) => {
-                  if (err) return inner_reject(err)
-                  inner_resolve(JSON.parse(data))
-                })
-              })
-            })
-
-            Promise.all(filesPromiseArray)
-              .then( res => {
-                resolve([].concat(res))
-              })
-              .catch( err => {
-                console.error(err)
-              })
-          })
-        })
+    poem: {
+      data (pname) {
+        return Promise.resolve(poemsJSON[pname])  
       }
+    },
+    poems: {
+//      data () {
+//        return new Promise( (resolve, reject) => {
+//          fs.readdir(poemsOut, (err, files) => {
+//            const filesPromiseArray = files.map( file => {
+//              return new Promise( (inner_resolve, inner_reject) => {
+//                fs.readFile(path.join(poemsOut, file), {encoding: 'utf8'}, (err, data) => {
+//                  if (err) return inner_reject(err)
+//                  inner_resolve(JSON.parse(data))
+//                })
+//              })
+//            })
+//
+//            Promise.all(filesPromiseArray)
+//              .then( res => {
+//                resolve([].concat(res))
+//              })
+//              .catch( err => {
+//                console.error(err)
+//              })
+//          })
+//        })
+//      }
     }
   },
   rewrite: [

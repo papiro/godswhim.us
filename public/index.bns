@@ -7,13 +7,13 @@
     
 		<title>Godswhim.us</title>
 
-    <link rel="stylesheet" href="lib/grate/grate.css">
-    <link rel="stylesheet" href="lib/grate/main.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/lib/grate/grate.css">
+    <link rel="stylesheet" href="/lib/grate/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" id="css">
 
-    <script src="lib/livity/src/l.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/lib/livity/src/l.js"></script>
+    <script src="/js/main.js"></script>
   </head>
   <body class="moon">
     <header></header>

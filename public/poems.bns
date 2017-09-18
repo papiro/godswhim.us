@@ -1,17 +1,32 @@
-<link rel="stylesheet" href="/css/poems.css">
+<link id="css" rel="stylesheet" href="/css/poems.css">
 <title>Poems</title>
 
 <header></header>
 
 <main class="poems-main">
-  <bean id="poems">
+`
+  [
+    {
+      href: "a_heart_of_darkness",
+      title: "A Heart of Darkness"
+    },
+    {
+      href: "cozy_little_lamb",
+      title: "Cozy Little Lamb"
+    }
+  ] as poem =>
+    <div class="poem-cell">
+      <h3><a class="poem-link" href="/poems/${poem.href}">${poem.title}</a></h3>
+    </div>
+`
+<!--  
+<bean id="poems">
   poems as poem =>
 
-    <h2>${poem.title}</h2>
-
     <pre class="poem-cell">
-      ${poem.dump}
+      ${poem.title}
     </pre>
 
-  </bean>
+</bean>
+  -->
 </main>

@@ -1,5 +1,7 @@
 'use strict'
 
+const poemPages = (page) => `/poems/pages/${page}`
+
 new Livity({
   routes: {
     '/': {
@@ -33,6 +35,12 @@ new Livity({
     },
     '/poems': {
       template: '/poems.bns'
+    },
+    '/poems/a_heart_of_darkness': {
+      template: poemPages('a_heart_of_darkness.bns')
+    },
+    '/poems/cozy_little_lamb': {
+      template: poemPages('cozy_little_lamb.bns')
     }
   }
 })

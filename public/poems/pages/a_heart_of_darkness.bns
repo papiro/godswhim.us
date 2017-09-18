@@ -1,0 +1,19 @@
+<link rel="stylesheet" id="css" href="/css/poems/a_heart_of_darkness.css">
+
+<title>A Heart of Darkness</title>
+
+<header></header>
+
+<main>
+  <img class="fire-image" src="/img/feu.jpg">
+
+  <pre class="poem">
+    <bean id="poem" data-args="A Heart of Darkness">${this}</bean>
+  </pre>
+</main>
+
+<footer>
+  <p> 
+    If you would like to receive updates of art-expressions channeled through the author of this website, please send an email to: pierre.pirault_at_outlook.com.
+  </p>
+</footer>

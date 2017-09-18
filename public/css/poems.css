@@ -3,6 +3,15 @@
 }
 .poem-cell {
   background-color: #D9C9AF;
-  border-radius: 3em;
   white-space: pre-wrap;
+  text-align: center;
+}
+.poem-link {
+  font-size: 1em;
+}
+
+@media (min-width: 768px) {
+  .poem-link {
+    font-size: 2em;
+  }
 }

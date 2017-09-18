@@ -1,0 +1,19 @@
+html {
+  background-color: black;
+}
+body {
+  color: white;
+}
+main {
+  background-color: #1A0504;
+}
+.poem {
+  white-space: pre-wrap;
+  padding: 0.3em;
+  font-size: 1.1em;
+}
+@media (min-width: 768px) {
+  .fire-image {
+    float: left;
+  }
+}
