@@ -42,6 +42,8 @@ const poemsJSON = build.text(new build.TextParser({
   return obj
 }, {})
 
+console.log(poemsJSON)
+
 const server = require('awning').server({
   name: 'Godswhim.us',
   root,

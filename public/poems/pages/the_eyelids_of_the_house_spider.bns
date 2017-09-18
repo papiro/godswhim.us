@@ -1,0 +1,15 @@
+<link rel="stylesheet" id="css" href="/css/poems/cozy_little_lamb.css">
+
+<title>The Eyelids of the House Spider, or, "Cozy Little Lamb"</title>
+
+<header>
+  <h2>
+    The Eyelids of the House Spider, or, "Cozy Little Lamb"
+  </h2>
+</header>
+
+<main>
+  <pre class="poem">
+    <bean id="poem" data-args="The Eyelids of the House Spider, or, Cozy Little Lamb">${this}</bean>
+  </pre>
+</main>

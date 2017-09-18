@@ -1,8 +1,6 @@
 @import './font-faces.css';
 
 header .theme-switch {
-  -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
   transform: translateZ(0);
 
   border: 0.5em ridge;

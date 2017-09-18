@@ -40,7 +40,7 @@ new Livity({
       template: poemPages('a_heart_of_darkness.bns')
     },
     '/poems/cozy_little_lamb': {
-      template: poemPages('cozy_little_lamb.bns')
+      template: poemPages('the_eyelids_of_the_house_spider.bns')
     }
   }
 })
