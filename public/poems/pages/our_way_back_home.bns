@@ -1,0 +1,15 @@
+<link rel="stylesheet" id="css" href="/css/poems/our_way_back_home.css">
+
+<title>Our Way Back Home</title>
+
+<header>
+  <h2>
+    Our Way Back Home
+  </h2>
+</header>
+
+<main>
+  <pre class="poem">
+    <bean id="poem" data-args="Our Way Back Home">${this}</bean>
+  </pre>
+</main>

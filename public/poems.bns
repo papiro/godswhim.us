@@ -13,6 +13,14 @@
     {
       href: "cozy_little_lamb",
       title: "Cozy Little Lamb"
+    },
+    {
+      href: "dream_swell",
+      title: "Dream Swell"
+    },
+    {
+      href: "our_way_back_home",
+      title: "Our Way Back Home"
     }
   ] as poem =>
     <div class="poem-cell">

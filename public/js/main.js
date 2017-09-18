@@ -41,6 +41,12 @@ new Livity({
     },
     '/poems/cozy_little_lamb': {
       template: poemPages('the_eyelids_of_the_house_spider.bns')
+    },
+    '/poems/dream_swell': {
+      template: poemPages('dream_swell.bns')
+    },
+    '/poems/our_way_back_home': {
+      template: poemPages('our_way_back_home.bns')
     }
   }
 })
