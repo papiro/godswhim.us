@@ -1,0 +1,15 @@
+<link rel="stylesheet" id="css" href="/css/poems/to_love.css">
+
+<title>To Love</title>
+
+<header>
+  <h2>
+    To Love
+  </h2>
+</header>
+
+<main>
+  <pre class="poem">
+    <bean id="poem" data-args="To Love">${this}</bean>
+  </pre>
+</main>

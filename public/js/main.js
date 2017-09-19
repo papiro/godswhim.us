@@ -47,6 +47,9 @@ new Livity({
     },
     '/poems/our_way_back_home': {
       template: poemPages('our_way_back_home.bns')
+    },
+    '/poems/to_love': {
+      template: poemPages('to_love.bns')
     }
   }
 })
