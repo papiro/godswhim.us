@@ -14,10 +14,10 @@ new Livity({
           l('body').removeClass(currentTheme).addClass(nextTheme)
         })
         // On load, animate title.
-        setTimeout(() => {
-          const { currentTheme, nextTheme } = getThemeInfo(lthemeSwitch[0])
-          l('body').addClass(currentTheme).removeClass(nextTheme)
-        }, 1000)
+//        setTimeout(() => {
+//          const { currentTheme, nextTheme } = getThemeInfo(lthemeSwitch[0])
+//          l('body').addClass(currentTheme).removeClass(nextTheme)
+//        }, 1000)
 
         function getThemeInfo (themeSwitcher) {
           const { themes: availableThemesStr, currentTheme } = lthemeSwitch[0].dataset
