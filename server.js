@@ -99,7 +99,7 @@ const server = require('awning').server({
     }
   ],
   middleware: [
-    'logger',
+//    'logger',
 //    'REST',
     'rewrite',
     'beans'

@@ -7,6 +7,11 @@ new Livity({
     '/': {
       template: '/home.bns',
       body () {
+        const hour = (new Date()).getHours()
+        if (hour > 20 || hour < 6) {
+          l('body').addClass('moon').removeClass('sun')
+        }
+
         const lthemeSwitch = l('#themeSwitch')
         lthemeSwitch.on('click', function () {
           const { currentTheme, nextTheme } = getThemeInfo(this)
