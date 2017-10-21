@@ -55,6 +55,18 @@ new Livity({
     },
     '/poems/to_love': {
       template: poemPages('to_love.bns')
+    },
+    '/sound_art': {
+      template: 'sound-art.bns',
+      body () {
+        l('.volume-slider').on('input', function () {
+          // Adjust all sliders.
+          Array.from(document.getElementsByClassName('volume-slider')).forEach( slider => {
+            slider.value = this.value
+            document.getElementById(this.dataset['for']).volume = this.value
+          })
+        })
+      }
     }
   }
 })

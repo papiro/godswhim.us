@@ -12,20 +12,20 @@
     <ul>
       `[
         {
-          href: 'poems',
+          href: '/poems',
           text: 'P&oelig;ms'
         },
         {
-          href: 'sound_art',
+          href: '/sound_art',
           text: 'Sound Art'
         },
         {
-          href: 'imagical_art_pieces',
+          href: 'http://e1motion.wordpress.com',
           text: 'Imagical Art Pieces'
         }
       ] as category =>
       <li class="category">
-        <a href="/${category.href}" class="category-link">
+        <a href="${category.href}" class="category-link">
           ${category.text}
         </a>
       </li>

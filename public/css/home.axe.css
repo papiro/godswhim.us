@@ -39,6 +39,10 @@ body.moon{
 .category-link {
   text-shadow: 0 0 0.3em offwhite, -0.05em 0.05em 0.1em #000;
 }
+a.category-link {
+  text-decoration: none;
+  color: black;
+}
 .moon .category-link {
   transform: translate3d(0,0,0);
   color: white;

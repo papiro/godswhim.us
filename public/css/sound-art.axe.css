@@ -1,0 +1,131 @@
+.poem {
+  background-color: sun4;
+  text-align: center;
+}
+h3 {
+  background-color: sun1;
+  margin: 0;
+  padding: 1em 0;
+}
+.poem:nth-child(2n+1) h3 {
+  background-color: peacefulBlack;
+  color: offwhite;
+}
+.poem:nth-child(2n) h3 {
+  background-color: softGreen;
+  color: peacefulBlack;
+}
+audio::-webkit-media-controls-panel {
+  background-color: sun4;
+}
+audio {
+  background-color: sun4;
+}
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-play-button
+{
+  height: 5em;
+  width: 5em;
+}
+/*
+audio::-webkit-media-controls-current-time-display
+audio::-webkit-media-controls-volume-slider-container
+audio::-webkit-media-controls-volume-slider
+audio::-webkit-media-controls-seek-back-button
+audio::-webkit-media-controls-seek-forward-button
+audio::-webkit-media-controls-fullscreen-button
+audio::-webkit-media-controls-rewind-button
+audio::-webkit-media-controls-return-to-realtime-button
+audio::-webkit-media-controls-toggle-closed-captions-button
+*/
+input[type=range] {
+  -webkit-appearance: none;
+  width: 80%;
+}
+input[type=range]::after {
+  font-weight: bold;
+  content: "volume"; 
+  position: relative;
+  margin-left: -4em;
+  z-index: 1;
+  bottom: -1em;
+  background-color: white;
+  color: carefreeBlue1;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0.9px 0.9px 1.7px #002200, 0px 0px 0.9px #003c00;
+  background: #205928;
+  border-radius: 0.1em;
+  border: 0.05em solid #18d501;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 8.4px 8.4px 5.8px #335894, 0px 0px 8.4px #3a63a7;
+  border: 0px solid #759433;
+  height: 0.5em;
+  width: 2em;
+  background: #d9c9af;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: 2.55px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #276c30;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 11.3px;
+  cursor: pointer;
+  box-shadow: 0.9px 0.9px 1.7px #002200, 0px 0px 0.9px #003c00;
+  background: #205928;
+  border-radius: 1px;
+  border: 1.1px solid #18d501;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 8.4px 8.4px 5.8px #335894, 0px 0px 8.4px #3a63a7;
+  border: 0px solid #759433;
+  height: 4px;
+  width: 50px;
+  border-radius: 0px;
+  background: #d9c9af;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 11.3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #194620;
+  border: 1.1px solid #18d501;
+  border-radius: 2px;
+  box-shadow: 0.9px 0.9px 1.7px #002200, 0px 0px 0.9px #003c00;
+}
+input[type=range]::-ms-fill-upper {
+  background: #205928;
+  border: 1.1px solid #18d501;
+  border-radius: 2px;
+  box-shadow: 0.9px 0.9px 1.7px #002200, 0px 0px 0.9px #003c00;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 8.4px 8.4px 5.8px #335894, 0px 0px 8.4px #3a63a7;
+  border: 0px solid #759433;
+  width: 50px;
+  border-radius: 0px;
+  background: #d9c9af;
+  cursor: pointer;
+  height: 4px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #205928;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #276c30;
+}

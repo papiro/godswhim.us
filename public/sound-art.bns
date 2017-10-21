@@ -1,0 +1,26 @@
+<link id="css" rel="stylesheet" href="/css/sound-art.css">
+
+<header></header>
+<main>
+  <ul class="poems">
+  `
+    [
+      {
+        filename: 'indy2la.mp3',
+        title: 'Indy 2 L.A.'
+      },
+      {
+        filename: '4jon.mp3',
+        title: '4Jon'
+      }
+    ] as song => 
+      <li class="poem">
+        <h3>${song.title}</h3>
+        <input class="volume-slider" data-for="${song.filename}" type="range" min="0" max="1" step="0.1">
+        <audio id="${song.filename}" controls preload="metadata">
+          <source type="audio/mpeg" src="/music/${song.filename}">
+        </audio>
+      </li>
+  `
+  </ul>
+</main>
