@@ -23,7 +23,7 @@ int main (int argc, char *argv[]) {
 
   for (unsigned short i = 1; i <= count; i++) {
     if (i > 2) {
-      bigIntAdd(prev_ptr, next_ptr);  
+      bigIntAdd(&prev_ptr, &next_ptr);  
       outFib(i, prev_ptr);
       // Here's where we swap
       char *temp_ptr = prev_ptr;
@@ -32,15 +32,19 @@ int main (int argc, char *argv[]) {
     } else outFib(i, i == 1 ? prev_ptr : next_ptr);
   }
 }
-void bigIntAdd (char **prev, char **next) {
+void bigIntAdd (char **_prev, char **_next) {
+  char *prev = *_prev;
+  char *next = *_next;
   padBigs(prev, next);
   // They should be equal length now.
   size_t len = strlen(prev);
   if (len >= mem_len) {
     // grow mem
     mem_len += 10; 
-    prev = realloc(prev, mem_len);
-    next = realloc(next, mem_len);
+    *_prev = realloc(prev, mem_len);
+    *_next = realloc(next, mem_len);
+    prev=*_prev;
+    next=*_next;
   }
   char *temp = prev;
   for (unsigned short i = len; i>0; i--) {
