@@ -2,21 +2,24 @@
 #include <stdio.h>
 #include <string.h>
 
-void outFib     (unsigned short, char*, FILE*);
+void outFib     (unsigned long, char*, FILE*, short);
 void chkArgLen  (int);
 void lpadZero   (char*);
 void bigIntAdd  (char**, char**);
 void padBigs    (char*, char*);
-void carryTheOne(char*, unsigned short);
+void carryTheOne(char*, unsigned long);
 
 #define filename      "fib.gen"
 #define start_mem_len 10
 #define mem_inc       10
-unsigned short mem_len = start_mem_len;
+unsigned long mem_len = start_mem_len;
 
 int main (int argc, char *argv[]) {
   chkArgLen(argc);
-  unsigned short count = atoi(argv[1]);
+  unsigned long count = atoi(argv[1]);
+  short toFile = 0;
+  if (argc == 3)
+    toFile = 1; 
 
   FILE *fn = fopen(filename, "w"); 
   char *prev_ptr = malloc(mem_len); 
@@ -24,15 +27,15 @@ int main (int argc, char *argv[]) {
   *prev_ptr = '0';
   *next_ptr = '1';
 
-  for (unsigned short i = 1; i <= count; i++) {
+  for (unsigned long i = 1; i <= count; i++) {
     if (i > 2) {
       bigIntAdd(&prev_ptr, &next_ptr);  
-      outFib(i, prev_ptr, fn);
+      outFib(i, prev_ptr, fn, toFile);
       // Here's where we swap
       char *temp_ptr = prev_ptr;
       prev_ptr = next_ptr;
       next_ptr = temp_ptr;
-    } else outFib(i, i == 1 ? prev_ptr : next_ptr, fn);
+    } else outFib(i, i == 1 ? prev_ptr : next_ptr, fn, toFile);
   }
 }
 void bigIntAdd (char **prev, char **next) {
@@ -49,13 +52,13 @@ void bigIntAdd (char **prev, char **next) {
       exit(1);
     }
     // Zero-out the new space?
-    for (unsigned short i = len; i < mem_len; i++) {
+    for (unsigned long i = len; i < mem_len; i++) {
       *(*prev+i) = '\0';
       *(*next+i) = '\0';
     }
   }
-  for (unsigned short i = len; i>0; i--) {
-    unsigned short idx = i-1;
+  for (unsigned long i = len; i>0; i--) {
+    unsigned long idx = i-1;
     short dig1 = *(*prev + idx) - '0';
     short dig2 = *(*next + idx) - '0';
     short dig3 = dig1 + dig2;
@@ -67,9 +70,9 @@ void bigIntAdd (char **prev, char **next) {
     *(*prev + idx) = dig3 + '0';
   }
 }
-void carryTheOne (char *prev, unsigned short pos) {
+void carryTheOne (char *prev, unsigned long pos) {
   char *left = (prev + pos - 1);
-  unsigned short dig = *left - '0';
+  unsigned long dig = *left - '0';
   if (++dig >= 10) {
     *left = '0'; 
     carryTheOne(prev, pos - 1);
@@ -96,8 +99,11 @@ void lpadZero (char *num) {
   }
   *num = '0';
 }
-void outFib(unsigned short count, char *num, FILE *fn) {
-  fprintf(fn, "%hu: %s\n", count, num);
+void outFib(unsigned long count, char *num, FILE *fn, short toFile) {
+  if (toFile)
+    fprintf(fn, "%lu: %s\n", count, num);
+  else
+    printf("%lu: %s\n", count, num);
 }
 void chkArgLen (int argc) {
   if (argc < 2) {
