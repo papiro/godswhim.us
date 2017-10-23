@@ -2,20 +2,23 @@
 #include <stdio.h>
 #include <string.h>
 
-void outFib     (unsigned short, char*);
+void outFib     (unsigned short, char*, FILE*);
 void chkArgLen  (int);
 void lpadZero   (char*);
 void bigIntAdd  (char**, char**);
 void padBigs    (char*, char*);
 void carryTheOne(char*, unsigned short);
 
+#define filename      "fib.gen"
 #define start_mem_len 10
+#define mem_inc       10
 unsigned short mem_len = start_mem_len;
 
 int main (int argc, char *argv[]) {
   chkArgLen(argc);
   unsigned short count = atoi(argv[1]);
 
+  FILE *fn = fopen(filename, "w"); 
   char *prev_ptr = malloc(mem_len); 
   char *next_ptr = malloc(mem_len); 
   *prev_ptr = '0';
@@ -24,40 +27,44 @@ int main (int argc, char *argv[]) {
   for (unsigned short i = 1; i <= count; i++) {
     if (i > 2) {
       bigIntAdd(&prev_ptr, &next_ptr);  
-      outFib(i, prev_ptr);
+      outFib(i, prev_ptr, fn);
       // Here's where we swap
       char *temp_ptr = prev_ptr;
       prev_ptr = next_ptr;
       next_ptr = temp_ptr;
-    } else outFib(i, i == 1 ? prev_ptr : next_ptr);
+    } else outFib(i, i == 1 ? prev_ptr : next_ptr, fn);
   }
 }
-void bigIntAdd (char **_prev, char **_next) {
-  char *prev = *_prev;
-  char *next = *_next;
-  padBigs(prev, next);
+void bigIntAdd (char **prev, char **next) {
+  padBigs(*prev, *next);
   // They should be equal length now.
-  size_t len = strlen(prev);
-  if (len >= mem_len) {
+  size_t len = strlen(*prev);
+  if (len >= mem_len - 1) {
     // grow mem
-    mem_len += 10; 
-    *_prev = realloc(prev, mem_len);
-    *_next = realloc(next, mem_len);
-    prev=*_prev;
-    next=*_next;
+    mem_len += mem_inc; 
+    *prev = realloc(*prev, mem_len);
+    *next = realloc(*next, mem_len);
+    if (*prev == NULL || *next == NULL) {
+      fprintf(stderr, "%s", "realloc failed");
+      exit(1);
+    }
+    // Zero-out the new space?
+    for (unsigned short i = len; i < mem_len; i++) {
+      *(*prev+i) = '\0';
+      *(*next+i) = '\0';
+    }
   }
-  char *temp = prev;
   for (unsigned short i = len; i>0; i--) {
     unsigned short idx = i-1;
-    short dig1 = *(prev + idx) - '0';
-    short dig2 = *(next + idx) - '0';
+    short dig1 = *(*prev + idx) - '0';
+    short dig2 = *(*next + idx) - '0';
     short dig3 = dig1 + dig2;
     if (dig3 >= 10) {
       dig3 %= 10; 
       // Carrying the 1 onto either number will do.
-      carryTheOne(prev, idx);
+      carryTheOne(*prev, idx);
     }
-    *(temp + idx) = dig3 + '0';
+    *(*prev + idx) = dig3 + '0';
   }
 }
 void carryTheOne (char *prev, unsigned short pos) {
@@ -84,14 +91,13 @@ void padBigs (char *prev, char *next) {
 }
 void lpadZero (char *num) {
   // shift right, in-place
-  const unsigned long len = strlen(num);
-  for (unsigned long i = len; i > 0; i--) {
+  for (unsigned long i = strlen(num); i > 0; i--) {
     *(num+i) = *(num+i-1);
   }
   *num = '0';
 }
-void outFib(unsigned short count, char* num) {
-  printf("%hu: %s\n", count, num);
+void outFib(unsigned short count, char *num, FILE *fn) {
+  fprintf(fn, "%hu: %s\n", count, num);
 }
 void chkArgLen (int argc) {
   if (argc < 2) {
