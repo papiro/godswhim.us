@@ -41,6 +41,9 @@ new Livity({
     '/poems': {
       template: '/poems.bns'
     },
+    '/the_resurrection': {
+      template: '/the_resurrection.bns'
+    },
     '/poems/a_heart_of_darkness': {
       template: poemPages('a_heart_of_darkness.bns')
     },
